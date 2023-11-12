@@ -1,0 +1,98 @@
+
+body {
+  background-image: url(../img/background_bob.png);
+  background-size: 100%;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: rgb(255, 255, 255);
+}
+
+.search{
+  padding: 2em;
+  margin: 2em;
+}
+
+.header-hr{
+  padding: 0px;
+  margin: 0px;
+}
+
+h1{
+  text-align: center;
+  color: white;
+}
+h3{
+  text-align: center;
+}
+
+.login-form {
+  background-color: rgba(0, 0, 0, 0.5);
+  min-width: 300px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+select {
+  white-space: pre;
+}
+
+.opacity {
+  background: rgb(0, 0, 0, 0.75);
+  border-radius: 25px;
+}
+
+tr {
+  vertical-align: middle;
+}
+
+td {
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+/* label{
+  color: white;
+} */
+
+svg {
+  width: fit-content;
+  height: fit-content;
+}
+select {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+svg:hover {
+  fill: rgb(17, 0, 255);
+}
+
+#reviveTable {
+  border-bottom: 2px;
+  border-bottom-color: #fff;
+  border-width:2;
+  color:#fff;
+}
+.test {
+  color: #fff;
+}
+hr {
+  height:2px;
+  border-width:0;
+  color:rgb(255, 255, 255);
+  background-color:rgb(255, 255, 255);
+}
+
+.tg-0lax {
+  text-align: middle;
+  vertical-align: middle;
+  /* border-left-width: 2px; */
+  border-style: groove;
+  border-bottom: none;
+
+}
+
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}

@@ -1,0 +1,1692 @@
+[
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add ban length",
+        "content_type": 1,
+        "codename": "add_banlength"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change ban length",
+        "content_type": 1,
+        "codename": "change_banlength"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete ban length",
+        "content_type": 1,
+        "codename": "delete_banlength"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view ban length",
+        "content_type": 1,
+        "codename": "view_banlength"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add dino name",
+        "content_type": 2,
+        "codename": "add_dinoname"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change dino name",
+        "content_type": 2,
+        "codename": "change_dinoname"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete dino name",
+        "content_type": 2,
+        "codename": "delete_dinoname"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view dino name",
+        "content_type": 2,
+        "codename": "view_dinoname"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add punish ticket",
+        "content_type": 3,
+        "codename": "add_punishticket"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change punish ticket",
+        "content_type": 3,
+        "codename": "change_punishticket"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete punish ticket",
+        "content_type": 3,
+        "codename": "delete_punishticket"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view punish ticket",
+        "content_type": 3,
+        "codename": "view_punishticket"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add rev ticket",
+        "content_type": 4,
+        "codename": "add_revticket"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change rev ticket",
+        "content_type": 4,
+        "codename": "change_revticket"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete rev ticket",
+        "content_type": 4,
+        "codename": "delete_revticket"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view rev ticket",
+        "content_type": 4,
+        "codename": "view_revticket"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add rule",
+        "content_type": 5,
+        "codename": "add_rule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change rule",
+        "content_type": 5,
+        "codename": "change_rule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete rule",
+        "content_type": 5,
+        "codename": "delete_rule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view rule",
+        "content_type": 5,
+        "codename": "view_rule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add strike type",
+        "content_type": 6,
+        "codename": "add_striketype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change strike type",
+        "content_type": 6,
+        "codename": "change_striketype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete strike type",
+        "content_type": 6,
+        "codename": "delete_striketype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view strike type",
+        "content_type": 6,
+        "codename": "view_striketype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add broken rules",
+        "content_type": 7,
+        "codename": "add_brokenrules"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change broken rules",
+        "content_type": 7,
+        "codename": "change_brokenrules"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete broken rules",
+        "content_type": 7,
+        "codename": "delete_brokenrules"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view broken rules",
+        "content_type": 7,
+        "codename": "view_brokenrules"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 8,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 8,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 8,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 8,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 9,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 9,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 9,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 9,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 10,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 10,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 10,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 10,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 11,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 11,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 11,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 11,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 12,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 12,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 12,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 12,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 13,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 13,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 13,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 13,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$aU6ETv1PDU4caRvIpVpCCQ$xeBJKR5upmsi5T+G+XBSDw8k5FbS1FiLYxV4hMhQx+Q=",
+        "last_login": "2022-09-17T04:49:33.504Z",
+        "is_superuser": true,
+        "username": "H4v0c",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-09-17T04:48:51.962Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 1,
+    "fields": {
+        "dino": "None"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 2,
+    "fields": {
+        "dino": "Acro"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 3,
+    "fields": {
+        "dino": "Apa"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 4,
+    "fields": {
+        "dino": "Coah"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 5,
+    "fields": {
+        "dino": "Elasmo"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 6,
+    "fields": {
+        "dino": "Ichthy"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 7,
+    "fields": {
+        "dino": "Krono"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 8,
+    "fields": {
+        "dino": "Lurd"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 9,
+    "fields": {
+        "dino": "Megalo"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 10,
+    "fields": {
+        "dino": "Megaraptor"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 11,
+    "fields": {
+        "dino": "Mosa"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 12,
+    "fields": {
+        "dino": "Ory"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 13,
+    "fields": {
+        "dino": "Pachy"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 14,
+    "fields": {
+        "dino": "Para"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 15,
+    "fields": {
+        "dino": "Ptera"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 16,
+    "fields": {
+        "dino": "Sai"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 17,
+    "fields": {
+        "dino": "Trope"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 18,
+    "fields": {
+        "dino": "Rex"
+    }
+},
+{
+    "model": "kits.dinoname",
+    "pk": 19,
+    "fields": {
+        "dino": "Velo"
+    }
+},
+{
+    "model": "kits.striketype",
+    "pk": 1,
+    "fields": {
+        "strike": "None"
+    }
+},
+{
+    "model": "kits.striketype",
+    "pk": 2,
+    "fields": {
+        "strike": "Warning"
+    }
+},
+{
+    "model": "kits.striketype",
+    "pk": 3,
+    "fields": {
+        "strike": "Strike 1"
+    }
+},
+{
+    "model": "kits.striketype",
+    "pk": 4,
+    "fields": {
+        "strike": "Strike 2"
+    }
+},
+{
+    "model": "kits.striketype",
+    "pk": 5,
+    "fields": {
+        "strike": "Strike 3"
+    }
+},
+{
+    "model": "kits.striketype",
+    "pk": 6,
+    "fields": {
+        "strike": "Strike 4"
+    }
+},
+{
+    "model": "kits.striketype",
+    "pk": 7,
+    "fields": {
+        "strike": "Strike 5"
+    }
+},
+{
+    "model": "kits.striketype",
+    "pk": 8,
+    "fields": {
+        "strike": "Strike 6"
+    }
+},
+{
+    "model": "kits.striketype",
+    "pk": 9,
+    "fields": {
+        "strike": "Mute"
+    }
+},
+{
+    "model": "kits.banlength",
+    "pk": 1,
+    "fields": {
+        "banLen": "None"
+    }
+},
+{
+    "model": "kits.banlength",
+    "pk": 8,
+    "fields": {
+        "banLen": "1 hour"
+    }
+},
+{
+    "model": "kits.banlength",
+    "pk": 9,
+    "fields": {
+        "banLen": "12 Hour"
+    }
+},
+{
+    "model": "kits.banlength",
+    "pk": 10,
+    "fields": {
+        "banLen": "24 Hours"
+    }
+},
+{
+    "model": "kits.banlength",
+    "pk": 11,
+    "fields": {
+        "banLen": "48 Hours"
+    }
+},
+{
+    "model": "kits.banlength",
+    "pk": 12,
+    "fields": {
+        "banLen": "72 Hours"
+    }
+},
+{
+    "model": "kits.banlength",
+    "pk": 13,
+    "fields": {
+        "banLen": "30 Days"
+    }
+},
+{
+    "model": "kits.banlength",
+    "pk": 14,
+    "fields": {
+        "banLen": "Permanent"
+    }
+},
+{
+    "model": "kits.banlength",
+    "pk": 15,
+    "fields": {
+        "banLen": "Other"
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 1,
+    "fields": {
+        "rules": "None",
+        "description": "None",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 2,
+    "fields": {
+        "rules": "GN1",
+        "description": "Be respectful to other players and staff.",
+        "clarity": "> •We DO NOT allow discriminatory behavior, hate speech, slurs (including r-slur), harassment, threats, excessively gross/sexual conversation, or overt toxicity within Karma BoB Discord or our in-game server, even within private chats. Certain violations will result in an immediate and permanent ban. \r\n> •We DO allow swearing, “PG-13” behavior, and typical banter. \r\n> •Please do not bring up discuss"
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 3,
+    "fields": {
+        "rules": "GN2",
+        "description": "Respect staff requests",
+        "clarity": "> •If a staff member asks you to stop a certain topic, return to a body, leave a group due to overpacking, etc. please respect the request."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 4,
+    "fields": {
+        "rules": "GN3",
+        "description": "Our servers are English based",
+        "clarity": "Please only use English in public chats in Karma BoB Discord and our in-game server for moderation purposes."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 5,
+    "fields": {
+        "rules": "GN4",
+        "description": "A recording will be required as evidence for a report",
+        "clarity": "• Reports will not be considered on players’ word alone.\r\n• The in-game replay system alone may not be sufficient evidence for a ticket, we encourage videos of actual gameplay footage.\r\n• Screenshots may be included but do not replace the required video evidence.\r\n• Exceptions to this are evidence provided for reports pertaining to rules GN1 (be respectful), IG1 (revenge killing), or IG2 (targeting).\r\n• Recordings may not be edited in any way. Such as being sped up, chat boxes being blocked out or music being put over the video to hide any evidence that could be given."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 6,
+    "fields": {
+        "rules": "GN5",
+        "description": "Players may not mention or discuss ongoing or past reports, or report verdicts in Karma BoB Discord or in-game",
+        "clarity": "."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 7,
+    "fields": {
+        "rules": "GN6",
+        "description": "If you submit a report, do not delete the dinosaur(s) involved in the report!",
+        "clarity": "• Wait until a verdict on the report has been reached. Dinosaurs are not able to be revived if they are deleted from the character select menu.\r\n• A member of Karma staff will inform you when the dinosaur(s) are revived if applicable."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 8,
+    "fields": {
+        "rules": "GN7",
+        "description": "If a report was submitted against you, you may submit a counter-report if applicable",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 9,
+    "fields": {
+        "rules": "GN8",
+        "description": "Reports must be filed within 24 hours of the incident to be considered",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 10,
+    "fields": {
+        "rules": "GN9",
+        "description": "You may not use other accounts to evade bans or punishments",
+        "clarity": "• Doing so may result in an extension of your current ban or other other punishment."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 11,
+    "fields": {
+        "rules": "GN10",
+        "description": "You may not stream Beasts of Bermuda gameplay in the lounge VCs",
+        "clarity": "• Streaming other games is allowed."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 12,
+    "fields": {
+        "rules": "IG1",
+        "description": "No revenge killing",
+        "clarity": "• Revenge killing constitutes returning to the area of your previous dinosaur’s death to hunt or otherwise seek revenge against players who have hunted you."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 13,
+    "fields": {
+        "rules": "IG2",
+        "description": "No in-game targeting",
+        "clarity": "• Targeting another player constitutes the deliberate and repeated hunting, contesting, or other non-verbal harassment of another player or players."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 14,
+    "fields": {
+        "rules": "IG3",
+        "description": "No chat spamming, sending unsolicited egg requests, or spamming group/kick/mating requests.",
+        "clarity": "• This includes but is not limited to: sending consecutive numbers, sending large walls of text etc. \r\n• This includes both in discord as well as in game."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 15,
+    "fields": {
+        "rules": "IG4",
+        "description": "No \"GG\"s in global chat",
+        "clarity": "• GGs in other chats are still allowed, but not in global to reduce spam.\r\n• Usage of \"EZ\" will be labelled under toxicity."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 16,
+    "fields": {
+        "rules": "IG5",
+        "description": "No spam calling",
+        "clarity": "• This includes Para marking call.\r\n• Repeated marking of flyers and aquatics is exempt within reason."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 17,
+    "fields": {
+        "rules": "IG6",
+        "description": "Do not exploit glitches or bugs",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 18,
+    "fields": {
+        "rules": "IG7",
+        "description": "No abusing meshes",
+        "clarity": "• This includes attacking through solid objects, drinking though textures or the ground, hiding under the map or in objects intended to be solid, etc."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 19,
+    "fields": {
+        "rules": "IG8",
+        "description": "Players are allowed to defend themselves if they are being rule broke on",
+        "clarity": "• Players are required to supply sufficient evidence of themselves defending against a rule break."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 20,
+    "fields": {
+        "rules": "IG9",
+        "description": "Duels and “Damage Testing” are done at your own risk",
+        "clarity": "• All parties involved must consent to testing.\r\n• Any normal deaths due to or as a result of Duels or “Damage Testing” will not be restored.\r\n• Dinosaurs that die to bugs related to dueling may be eligible for revive.\r\n• Dueling groups do not qualify as being engaged under normal rules and may be subject to outside interference.\r\n• Requesting a duel and then cancelling to kill the player will be considered a loophole of this rule and punished as such."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 21,
+    "fields": {
+        "rules": "IG10",
+        "description": "Do not share your own or other players’ locations",
+        "clarity": "• This includes Global Chat, Local Chat, DMs, and VCs within the server."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 22,
+    "fields": {
+        "rules": "IG11",
+        "description": "Do not “Self Feed”",
+        "clarity": "• You may not feed your own dinosaurs to a different dinosaur you have."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 23,
+    "fields": {
+        "rules": "IG12",
+        "description": "Do not force respawn within a herd’s nesting area or near any dinosaurs that would receive the necrophobia debuff from your gore",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 24,
+    "fields": {
+        "rules": "IG13",
+        "description": "No scouting for yourself or other players",
+        "clarity": "• This includes leaving a group then returning to hunt said group, joining a group/taking an egg to locate them with the intention of hunting, having a non-grouped player scouting other player locations, self-scouting using a different dinosaur to find player locations, stream sniping, or other similar scenarios as determined by Karma staff"
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 25,
+    "fields": {
+        "rules": "IG14",
+        "description": "Players are granted 60 seconds of safety upon logging in",
+        "clarity": "• Players may not be followed, be attacked, or attack other players during this period.\r\n• Logging out and back in to the same dinosaur does not refresh this period"
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 26,
+    "fields": {
+        "rules": "IG15",
+        "description": "Mix-Packing is not allowed",
+        "clarity": "• You may not cooperate with any non-grouped dinosaur.\r\n• This includes warning players not in your pack/herd of danger.\r\n• You may not be in a VC designated for a different dinosaur or group.\r\n• Herding herbivores are exempt from this within their herd.\r\n• Warning players of natural phenomena like tornadoes, fires, and floods is NOT considered mix-packing."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 27,
+    "fields": {
+        "rules": "IG16",
+        "description": "You may not deliberately spread fires",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 28,
+    "fields": {
+        "rules": "IG17",
+        "description": "You may not 2 call to fake being friendly",
+        "clarity": "• You may not attack a dinosaur or group after 2 calling until you have completely left the area and returned.\r\n• A 2 call does not guarantee your safety if you don’t receive a 2 call back.\r\n• You may not pretend to be friendly in chats to bait players before attacking.  (Examples include luring someone in with a false sense of security before attacking/killing/doing something that would kill the player)\r\n• Dueling is not considered acting friendly."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 29,
+    "fields": {
+        "rules": "IG18",
+        "description": "You may not grow in or around specialized areas",
+        "clarity": "• This includes but is not limited to the patreon nesting areas and the arena.\r\n• This does not include the structures that were built for everyday use by players"
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 30,
+    "fields": {
+        "rules": "E1",
+        "description": "An engagement begins when one party takes damage, whether it be the aggressing or the defending party",
+        "clarity": "• An engagement may end naturally with no deaths if both parties show disinterest in continuing the fight, both parties lay down, or no damage is dealt for a significant period of time."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 31,
+    "fields": {
+        "rules": "E2",
+        "description": "After an engagement has begun, you may not switch targets or attack an outside group until after the engagement has ended",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 32,
+    "fields": {
+        "rules": "E3",
+        "description": "All engagements MUST END when 2 bodies are downed. This includes attacking party and defending party. Once two bodies have dropped both parties must STOP the engagement",
+        "clarity": "• After 2 bodies are downed, either party may 3 call to start a challenge to continue the engagement. If the other party returns the 3 call, a second engagement may begin immediately, ending when 2 more bodies are downed.\r\n• If you forfeit call instead, you MUST leave the fight area immediately and MAY NOT be killed while doing so.\r\n• Dinosaurs that 3 call are participating in the challenge, any dinosaurs in either party that 4 call (or 2 call on applicable dinosaurs) MUST leave and MAY NOT be attacked by those continuing the engagement.\r\n• This process may be continued for as long as members of both parties 3 call to challenge and 3 call in return to accept the challenge.\r\n• Once the challenge has been accepted a forfeit call WILL NOT guarantee your safety"
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 33,
+    "fields": {
+        "rules": "E4",
+        "description": "If a body drops, a chasing party may not follow a fleeing party beyond the render distance of the new player gore",
+        "clarity": "• If a fleeing party leaves render distance of the gore, they forfeit the gore and the engagement must end. The chasing party must return to their gore. If the fleeing party wants the gore, they must re-enter the area and contest as normal.\r\n• Only the group that has lost a dinosaur to the engagement may qualify as a fleeing party.\r\n• For flyers, marine, and semi-aquatic dinosaurs, if a body drops, a chasing party may not follow a fleeing party for longer than 20 seconds beyond the render distance of the new player gore."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 34,
+    "fields": {
+        "rules": "E5",
+        "description": "If you are not with your group at the start of an engagement, you have 5 minutes to get to them. If you cannot reach your group within 5 minutes, you may not assist each other in the fight",
+        "clarity": "• This includes herdmates."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 35,
+    "fields": {
+        "rules": "E6",
+        "description": "If your groupmates are in an engagement away from you, and you cannot join the engagement before they die, the engagement is considered over",
+        "clarity": "• If your dinosaur is able to contest for gores, you may contest for the body/bodies.\r\n• If your dinosaur follows herbivore aggression rules, you may not attack that group without another instance of provocation.\r\n • You may not run back to the same ongoing fight after you died and rejoin the fight"
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 36,
+    "fields": {
+        "rules": "E7",
+        "description": "No interfering with active engagements",
+        "clarity": "• Moving close enough to an engagement that you are intimidating either party is considered interfering.\r\n• You may join a new group or herd at any time, but may not interfere with any ongoing engagements that were started before you were in the group.\r\n• You may not switch dinosaurs during an engagement."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 37,
+    "fields": {
+        "rules": "E8",
+        "description": "After an engagement ends, you stay in the area at your own risk. This includes when healing off bleed or broken legs",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 38,
+    "fields": {
+        "rules": "E9",
+        "description": "You may not body deny",
+        "clarity": "• Body denying is any act that makes your body inedible.\r\n• This includes going into a shrine radius during an engagement where bodies provide no meat upon death.\r\n• You may not accept an egg invite while in an engagement.\r\n• You may not log out or Alt+F4 during an engagement.\r\n• You may not eat from or move a player gore during an engagement."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 39,
+    "fields": {
+        "rules": "E10",
+        "description": "Players may not start engagements 5 minutes before or after server restart",
+        "clarity": "• Engagements started prior to the 5 minute timer may continue.\r\n• This also applies to unscheduled restarts and crashes."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 40,
+    "fields": {
+        "rules": "E11",
+        "description": "You may not kill group-mates. If you wish to remove someone from your group, you must warn them in group chat, 3 call them, and vote to remove them",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 41,
+    "fields": {
+        "rules": "E12",
+        "description": "Players may not return within 15 minutes to hunt a group they have left or were removed from",
+        "clarity": "• You may not hunt players that have left or were removed from your group for 15 minutes unless they refuse to leave the area.\r\n• You may not return to the area and camp the group waiting for the 15 minute timer to be finished."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 42,
+    "fields": {
+        "rules": "E13",
+        "description": "Players may not re-engage the same group for 5 minutes after an engagement",
+        "clarity": "• This rule is referred to as our \"engagement timer\"."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 43,
+    "fields": {
+        "rules": "E14",
+        "description": "You may not re-engage the same group for 30 minutes after a successful hunt",
+        "clarity": "• A successful hunt is defined as an engagement in which you or your group kills at least one member of another group.\r\n• This rule is referred to as our \"hunt timer\"."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 44,
+    "fields": {
+        "rules": "E15",
+        "description": "If you leave the engagement areal, you may not rejoin that ongoing engagement",
+        "clarity": "• This does not apply for healing near an ongoing engagement, or if the other party continues engaging you while you are moving away.\r\n• Players that have left the engagement area may not be killed during that same engagement."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 45,
+    "fields": {
+        "rules": "E16",
+        "description": "If you are observing an ongoing engagement, you must wait 60 seconds after the engagement ends before you may hunt/follow/attack either party",
+        "clarity": "• Rule GR14 still applies in the case of a party obtaining gores from an engagement, you may not contest them from it."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 46,
+    "fields": {
+        "rules": "H1",
+        "description": "Herbivores may not attack unless provoked",
+        "clarity": "• Examples of provocation include entering ambush stance while facing herbivores, following herbivores, 3 calling herbivores, mock biting at herbivores, coming into their immediate vicinity, Acro z-call, knocking down multiple trees to deny a food source, eating food in a claimed area, or drinking from a claimed water source/area of water.\r\n• For Lurdusaurus, their immediate vicinity for provocation purposes is considered one average dart length.\r\n• Immediate vicinity is defined as 1 x 1.2 Apa Length."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 47,
+    "fields": {
+        "rules": "H2",
+        "description": "Herbivores must give warning before initiating a fight",
+        "clarity": "• They may 3 call to warn the threat to leave. If the threat fails to do so, the herbivore may attack.\r\n• If a carnivore has provoked and has entered within striking distance of an herbivore, the herbivore does not have to 3 call prior to attacking."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 48,
+    "fields": {
+        "rules": "H3",
+        "description": "Herbivores may claim and protect small depletable water sources, sections of large depletable water sources, and sections of rivers. They may only claim one at a time",
+        "clarity": "• Only one herd may stay at a small depletable water source or section of a river, only two herds may stay at a large depletable water source - herds passing through the area to eat or drink are not considered staying.\r\n• Herbivores may not defend areas of water outside of their immediate vicinity on certain water sources such as large lakes and rivers.\r\n• \"Large lakes\" on the current map are defined as River Lake, Mountain Lake, and Great Lake.\r\n• Herbivores may also claim and protect food sources in the immediate area of their claimed water even if they cannot defend the entirety of the water source.\r\n• Herbivores may allow non-grouped dinosaurs to drink from their claimed water or eat from their food sources at their discretion but are not required to do so.\r\n• There is no minimum group requirement to claim water sources.\r\n• Herbivores may attempt to push threats out of their water source given 3 calls and warning are given."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 49,
+    "fields": {
+        "rules": "H4",
+        "description": "Herbivores may contest other herbivores for land. They may only contest for areas with claimable water",
+        "clarity": "• To properly indicate a contest, multiple members of the contesting herd MUST state \"We are contesting\" in Local Chat and 3 call.\r\n• To properly forfeit a contest, you must 2, 4, or 5 call and leave the area within the appropriate time stated below.\r\n• The contesting herd must consist of at least 4 adults.\r\n• During the contest, at least 4 adult members of the contesting party must stay within the engagement area and may not hide (For example: Entering Ory holes, swimming deep into water, etc.)\r\n• Once the contest has been properly indicated, a 5 minute timer begins. During this time, dinosaurs who forfeit may collect their eggs, babies, and leave the area safely. After 5 minutes, all remaining dinosaurs in the defending herd may be attacked following the normal 2 body rule.\r\n• Dinosaurs that 3 call in return may attack and be attacked immediately.**\r\n• A contest must stop when 2 bodies have dropped or one herd forfeits the area.\r\n• If 2 bodies have dropped and the contesting party does NOT have 4 or more adults remaining, then the contesting party has failed and must forfeit the contest.\r\n• If the winner of the contest hasn’t been decided after 2 bodies drop, each party has 30 seconds to 3 call to continue the contest, or 2, 4 or 5 call to forfeit the area.\r\n• Members of either herd may not attack once a contest has been decided.\r\n• You may not contest for the same landmark multiple times in one 12-hour period. This timer begins at the start of your first contest.\r\n• If you have forfeited a contest, you must continue to actively leave the area and may not drink from the claimed water or eat the surrounding food."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 50,
+    "fields": {
+        "rules": "H5",
+        "description": "If you win a contest for an area, you must stay in that area for 2 hours",
+        "clarity": "• You may wander to food and water sources within the close vicinity of your contested area, but you may not migrate from the area you contested for.\r\n• If any herd members must go beyond the close vicinity of your contested area for resources, a majority of the herd must remain at the contested area."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 51,
+    "fields": {
+        "rules": "H6",
+        "description": "You may not contest a herd that you have previously been a part of for 30 minutes or until you have completely left the herd’s nesting area (whichever takes longer)",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 52,
+    "fields": {
+        "rules": "H7",
+        "description": "You may not hide group members to conceal herd numbers during a contest",
+        "clarity": "• At the start of a contest, any member of the contesting group not within line of sight may not join in the contest."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 53,
+    "fields": {
+        "rules": "H8",
+        "description": "Herbivores do not have to allow another herbivore in their herd",
+        "clarity": "• Unwelcome herbivores must be 3 called multiple times as a warning to leave.\r\n• Herd members may be removed from groups by vote and 3 called from the area.\r\n• You must allow them time to forfeit and leave the area before attacking."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 54,
+    "fields": {
+        "rules": "H9",
+        "description": "Herbivores & mixed herds are not allowed to deny a player gore to a carnivore",
+        "clarity": "• Herbivores must allow the carnivore to safely attempt to move the player gore away if no engagement is ongoing.\r\n• Carnivores may not attack herbivores while attempting to move a player gore away.\r\n• The carnivore must state its intention before moving into the herd for the player gore.\r\n• If the gore is near a herd’s babies or nesting area and the carnivore cannot move the gore away, the herd may 3 call the carnivore away from the gore."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 55,
+    "fields": {
+        "rules": "H10",
+        "description": "If a carnivore or pack enters an engagement with a herd, the herd may only attack until the carnivore or pack makes it out of the area",
+        "clarity": "• Once the carnivore or pack has left the area the herd may only attack with provocation as normal.\r\n• For Lurdusaurus, they may chase and attack for up to 20 seconds from the initial engagement area under water."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 56,
+    "fields": {
+        "rules": "H11",
+        "description": "Herbivores may not intim a dinosaur from an area",
+        "clarity": "• Against other herbivores or omnivores, a contest for land must be initiated where applicable under H4.\r\n• Against carnivores that have been in an area before the herbivore, the herbivore must follow normal provocation rules and may not intim or attack without provocation."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 57,
+    "fields": {
+        "rules": "H12",
+        "description": "Herbivores may not block high traffic areas",
+        "clarity": "• Herbivores may not block carnivores from entering or exiting high traffic ares such as caves, ramps or bridges. Anyone wishing to pass must 2 call the herd in order to gain the safety to pass. \r\n• If the carnivores leave the area and returns, they must 2 call again if they wish to pass."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 58,
+    "fields": {
+        "rules": "N1",
+        "description": "Nest owners are allowed to reject nesting requests at their discretion",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 59,
+    "fields": {
+        "rules": "N2",
+        "description": "If asked to leave an egg by the nest owners, you are required to do so",
+        "clarity": "• Nest owners are permitted to kill the egg or kill the resulting hatchling if you do not comply with this request."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 60,
+    "fields": {
+        "rules": "N3",
+        "description": "Nest owners are required to inform nest requests if they are in an incest egg or if the egg was damaged while the female was pregnant",
+        "clarity": "• This does not apply to eggs that were damaged after being laid, this does not affect inherits."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 61,
+    "fields": {
+        "rules": "N4",
+        "description": "No spamming mass amounts of eggs. Each mating pair may only have 12 eggs down at a time",
+        "clarity": "• Admin sanctioned nesting events are an exception to this rule."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 62,
+    "fields": {
+        "rules": "GR1",
+        "description": "Carnivores 0.8 and larger are protected on claimed fresh player gores",
+        "clarity": "• They are not protected on spawn gores of any kind.\r\n• If a dinosaur enters the immediate vicinity of your claimed gore, you may attack them.\r\n• Rotting gores do not offer protection, and you do not have to stay with them."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 63,
+    "fields": {
+        "rules": "GR2",
+        "description": "Carnivores 0.799 growth and under are protected on claimed fresh spawn gores as well as fresh player gores",
+        "clarity": "• 0.799 and smaller dinosaurs are differentiated from larger ones by their calls. Dinosaurs of this growth and lower will have the juvenile versions of their dinosaur’s calls.\r\n• They may only be contested from their spawn gore by other carnivores 0.799 and smaller.\r\n• They may be contested from player gore by any dinosaur.\r\n• If you’re in a group, you must follow the gore rules for the largest dinosaur in your group, meaning if any group member is 0.8 or larger, no member of your group will be protected on spawn gore regardless of their own size.\r\n• You may not lie or mislead about your size to be protected by spawn gore.\r\n• If a dinosaur enters the immediate vicinity of your claimed gore, you may attack them.\r\n• Rotting gores do not offer protection, and you do not have to stay with them."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 64,
+    "fields": {
+        "rules": "GR3",
+        "description": "The protection/claim radius of a claimable gore is 1 x 1.2 Apa Lengths",
+        "clarity": "• This means that you must stay within this radius to receive protection from your claimed gore. (Player gore for 0.8 and above, Spawn gore for under 0.799)"
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 65,
+    "fields": {
+        "rules": "GR4",
+        "description": "Spawn gores are not contestable and do not offer protection except where outlined in GR2",
+        "clarity": "• Non-grouped dinosaurs may not share spawn gores."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 66,
+    "fields": {
+        "rules": "GR5",
+        "description": "If you're a carnivore, you must stay with the bodies of what you kill - even in self-defense",
+        "clarity": "• Once you kill a player, you cannot leave the body until the gore is fully eaten, you are contested, or if the body is inedible due to being unreachable or turned rotten.\r\n• This includes logging out with claimed gore."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 67,
+    "fields": {
+        "rules": "GR6",
+        "description": "The entire pack must stay with the body if you kill a player (even if you didn't kill them but your pack did, you must stay with the corpse)",
+        "clarity": "• Exception is made if some members wish to leave the body for water, but must return directly back to the body after drinking.\r\n• If you are in a group, at least one member of your group must stay with the gore while the others get water.\r\n• If you leave the immediate area of your gore for water, you may be hunted, your pack mates at the gore may not leave the gore to assist you, and you may not return to your body for protection if an engagement has started.\r\n• You may not hunt or start a new engagement while you are away from your body and must return directly to your body (you may defend yourself if you are attacked).\r\n• If you are solo you may leave for water but you must return directly back to your body.\r\n• If you have left your body to get water as a solo player and someone claims the body in your absence, you must contest for the body as normal."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 68,
+    "fields": {
+        "rules": "GR7",
+        "description": "You may not strip legs from your claimed gore",
+        "clarity": "• This causes the gore to disappear faster and is considered an exploit."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 69,
+    "fields": {
+        "rules": "GR8",
+        "description": "If you find an unclaimed gore and you eat from it, move it or stay next to it you claim that gore and must stay with it",
+        "clarity": "• Scavengers may opt to remove a leg from a gore instead of claiming it. See Scavenger Rules for more information."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 70,
+    "fields": {
+        "rules": "GR9",
+        "description": "You may not use a call that is not a 3 call while approaching gore to falsify a contest",
+        "clarity": "• Doing so and killing the dinosaurs fleeing gore will be treated the same as killing a dinosaur on gore without contesting.\r\n• Standing outside of gore range and provoking (such as mock biting, z calling, crouching towards player etc) is considered failure to contest."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 71,
+    "fields": {
+        "rules": "GR10",
+        "description": "Carnivores must 3 call when entering an area to contest a body",
+        "clarity": "• The contest is for all claimed gores.\r\n• You may not linger in an area where someone is on a claimed gore.\r\n• You must allow the dinosaur(s) you are contesting 20 seconds to respond with either a 3 call or a forfeit before proceeding. The contested dinosaur must respond with a call within 20 seconds. (Both animations of the calls must be ended before proceeding)\r\n• If the other party forfeit calls (4, 5, or 2 call on applicable dinosaurs) and is moving away, you must allow them time to leave.\r\n• Failure to call within the 20 seconds is considered an acceptance to contest. \r\n• If you forfeit a gore, you must continue actively leaving the area around the body or the contesting party may attack you.\r\n• If the contested party accepts the contest, any form of surrendering does not have to be honored by the contesting party.\r\n• Dinosaurs that 3 call are participating in the contest, any dinosaurs in either party that 4 call (or 2 call on applicable dinosaurs) MUST leave and MAY NOT be attacked by those participating in the contest."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 72,
+    "fields": {
+        "rules": "GR11",
+        "description": "You may not hide group members to conceal pack numbers during a contest",
+        "clarity": "• At the start of a contest, any member of either group not within line of sight may not join the contest.\r\n• You can not use abilities such as Elusive to be invisible while contesting"
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 73,
+    "fields": {
+        "rules": "GR12",
+        "description": "If the gore is inaccessible to the contesting party, they can not initiate a contest",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 74,
+    "fields": {
+        "rules": "GR13",
+        "description": "Once a contest has been issued, neither participating party may carry the gore away or eat from it until the contest is over",
+        "clarity": "• Contests must be finished by fight or forfeit before the gore can be moved or eaten from."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 75,
+    "fields": {
+        "rules": "GR14",
+        "description": "Carnivores may not surround or encamp players that have a body, they must contest or move on",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 76,
+    "fields": {
+        "rules": "GR15",
+        "description": "If an engagement is ongoing, nearby players observing or hearing the fight may not contest for gores after the engagement is finished",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 77,
+    "fields": {
+        "rules": "GR16",
+        "description": "You may not hunt/follow someone for  3 minutes after they have forfeited a contest for gore",
+        "clarity": "• This includes witnessing the contest, not just participating."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 78,
+    "fields": {
+        "rules": "GR17",
+        "description": "You may re-contest your body that you forfeited but you must 3 call and give the other party time to forfeit and leave as normal",
+        "clarity": "• The player that forfeited the gore must leave the area of protection (1x 1.x Apa lengths) and wait a 60 second timer before contesting again."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 79,
+    "fields": {
+        "rules": "GR18",
+        "description": "No moving gore to be aggressive",
+        "clarity": "• No moving your gore to put other dinosaurs within your gore’s immediate vicinity.\r\n• No moving your gore in a range that applies necro or intim to another dinosaur."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 80,
+    "fields": {
+        "rules": "GR19",
+        "description": "You cannot ask someone to 3 call you off a claimed gore or otherwise offer up your gore",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 81,
+    "fields": {
+        "rules": "GR20",
+        "description": "You are not allowed to share bodies with carnivores outside of your group. If there is a body you wish to eat from you must contest for it",
+        "clarity": "• This does not include scavengers stealing legs from claimed gore"
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 82,
+    "fields": {
+        "rules": "GR21",
+        "description": "You may not hunt while you have a claimed gore",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 83,
+    "fields": {
+        "rules": "GR22",
+        "description": "If you are being closely pursued by a carnivore that is attempting to hunt you, you will not have safety if you attempt to claim a gore",
+        "clarity": "• “Closely pursued” means they have recently engaged you and are attempting to continue the fight, are closely within line of sight and attempting to begin an engagement by exchanging damage, etc."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 84,
+    "fields": {
+        "rules": "GR23",
+        "description": "No gore griefing",
+        "clarity": "• You may not move, hoard, or hide spawn gores in a way that would intentionally or unintentionally impact the gore availability for other dinosaurs.\r\n• You may not repeatedly move spawn gores away from the same dinosaur or group."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 85,
+    "fields": {
+        "rules": "GR24",
+        "description": "Players must finish their player gore and wait a  60 second timer if they see a player they wish to hunt",
+        "clarity": "• Contesting players for a gore also applies to this rule. \r\n• Players are not allowed to follow, hunt or camp the players while the 60 second timer is running. \r\n• Examples: A carnivore carrying a player gore around sees something they would like to hunt, they must finish their player gore and wait 60 seconds before hunting that player."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 86,
+    "fields": {
+        "rules": "A1",
+        "description": "May kill non-marine dinosaurs with claimed gore without contesting",
+        "clarity": "• This excludes semi-aquatics like Ichthyovenator, Tropeognathus, and Pteranodon if it has gore in the water.\r\n• This does not mean the gore can be stolen, just that those on the gore may be attacked."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 87,
+    "fields": {
+        "rules": "A2",
+        "description": "May not grab an Apatosaurus and drag it into a cave",
+        "clarity": "• The opening at the bottom of Great Lake and Mountain Lake is an exception to this rule.\r\n• You still may not drag an Apatosaurus into the attached enclosed areas or tunnels."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 88,
+    "fields": {
+        "rules": "A3",
+        "description": "May not use grabbing to glitch a player into terrain meshes",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 89,
+    "fields": {
+        "rules": "A4",
+        "description": "Do not have to be contested for gore by terrestrial dinosaurs",
+        "clarity": "• This does not mean the gore can be stolen, just that those on the gore may be attacked."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 90,
+    "fields": {
+        "rules": "S1",
+        "description": "May take a leg from a gore instead of claiming it",
+        "clarity": "• You still may not repeatedly leg your own claimed gore, this is considered an exploit to make the gore you are tethered to disappear faster.\r\n• If you eat from a gore instead of taking a leg from it, you are claiming it as normal."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 91,
+    "fields": {
+        "rules": "S2",
+        "description": "May steal legs from claimed gores at their own risk",
+        "clarity": "• If you die in an attempt to steal from a gore, this is a fair kill."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 92,
+    "fields": {
+        "rules": "S3",
+        "description": "Stealing an egg or baby snatching is an engagement",
+        "clarity": "• Carnivores may leave their gore to chase scavengers with their eggs or babies.\r\n• Herbivores may chase and kill scavengers with their eggs or babies.\r\n• Scavengers may be killed on sight by herbivores if it returns to their nesting area after stealing an egg or baby."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 93,
+    "fields": {
+        "rules": "S4",
+        "description": "If you snatch a baby, you must kill it or return it.",
+        "clarity": "• You may not relocate babies."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 94,
+    "fields": {
+        "rules": "B1",
+        "description": "Excessive burrows may be subject to unannounced burrow wipes",
+        "clarity": "> • Orys may not build excessive burrows. This will avoid the need for random burrow wipes.\r\n> • Orys may not extend past 3 different water sources. \r\n> • No over use of inedible items, such as the large crystals, bones etc."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 95,
+    "fields": {
+        "rules": "B2",
+        "description": "Do not build burrow entrances near the nesting grounds of herds",
+        "clarity": "> • Ory entrances close to herd sitting areas are subject to be closed."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 96,
+    "fields": {
+        "rules": "B3",
+        "description": "Entering an Ory’s burrow or camping the entrance to a burrow is considered a provoke",
+        "clarity": "> • Orys may attack without 3 calling any carnivore that enters or attempts to enter their burrow.\r\n> • Orys may 3 call a carnivore away from their burrow entrance, if the carnivore does not leave, they may attack.\r\n> • Do not build or dig in burrows that do not belong to you, otherwise the burrow owner may 3 call to warn you away before attacking."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 97,
+    "fields": {
+        "rules": "B4",
+        "description": "Leave room for other Orys to build",
+        "clarity": "> •Ory burrows may not extend across the whole area in which they are building. (One ory group may not take up all the space at ML, Bridge, River, etc)\r\n> •May not close up other Ory borrows just because one is close to another burrow."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 98,
+    "fields": {
+        "rules": "O1",
+        "description": "Omnivores must adhere to herbivore rules (H rules) except where noted in omnivore rules",
+        "clarity": "• Omnivores may not hunt.\r\n• Attempting to eat from or take a spawn gore in an omnivore's immediate vicinity is considered a provoke if they are NOT in a mixed herd."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 99,
+    "fields": {
+        "rules": "O2",
+        "description": "Omnivores may play in mixed herds with herbivores observing herd limits",
+        "clarity": "• If playing in mixed herds, omnivores may eat from nearby unclaimed player gores, but may not claim player gores.\r\n• Omnivores in mixed herds may move spawn gores back to their herding area as long as it does not give any herdmates necro.\r\n• Omnivores in mixed herds may NOT move player gores.\r\n• Exception for moving player gores is made if there is a gore giving necro within the herd and the omnivore wishes to move it outside of the herd's necro range.\r\n• If you have a claimed gore, you must finish it before joining a mixed herd."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 100,
+    "fields": {
+        "rules": "O3",
+        "description": "Omnivores NOT playing with mixed herds may contest for and claim player gores",
+        "clarity": "• Omnivores not playing with mixed herds may contest for and claim spawn gores if all group members are 0.799 and below as outlined in GR2.\r\n• All other gore contesting rules (GR rules) MUST be observed."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 101,
+    "fields": {
+        "rules": "O4",
+        "description": "For rule purposes, a mixed group of Pachy and Coah is considered a mixed herd",
+        "clarity": "• A group of Pachy and Coah together may not contest for or claim gores."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 102,
+    "fields": {
+        "rules": "O5",
+        "description": "Non-grouped omnivores may not share spawn gores. If non-grouped omnivores are eating from a spawn gore, you must find a different gore or wait until they have finished",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 103,
+    "fields": {
+        "rules": "O6",
+        "description": "Omnivores NOT playing with mixed herds may still claim water using water claiming rules under H3 of herbivore aggression",
+        "clarity": ""
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 104,
+    "fields": {
+        "rules": "O7",
+        "description": "May not leave mixed herds to contest gore",
+        "clarity": "• Omnivores may not contest for any gores in the area after leaving a mixed herd."
+    }
+},
+{
+    "model": "kits.rule",
+    "pk": 105,
+    "fields": {
+        "rules": "O8",
+        "description": "If an engagement causes a mixed herd to become a non-mixed omnivore group, the omnivores are still considered a mixed herd until the end of the engagement",
+        "clarity": "• The omnivores may not contest for the bodies involved in the engagement.\r\n• Example: If 2 Coahs and 1 Para are grouped, and the Para is killed in an engagement, the Coahs may not contest for that Para's body despite now technically being a non-mixed omnivore group."
+    }
+}
+]

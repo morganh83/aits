@@ -1,0 +1,5 @@
+.non-bs__scroll {
+    overflow-y: scroll;
+    height: 250px;
+    overflow-x: scroll;
+}

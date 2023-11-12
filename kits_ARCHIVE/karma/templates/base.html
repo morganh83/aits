@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KITS</title>
+    <link rel="icon" type="image/png" href="{% static 'kits/img/favicon.ico' %}"/>
+    <!-- load bootstrap and CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "kits/css/master.css" %}"/>
+    <link rel="stylesheet" href="{% static "kits/css/fields.css" %}"/>
+    <link rel="stylesheet" href="{% static "kits/css/multi-select.css" %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+
+  </head>
+  <body>
+    <!--  Navbar -->
+    <nav class="navbar navbar-dark bg-dark navbar-fixed-top">
+      <div class="container-fluid">
+        <h1 class="col text-center">Karma Interactive Ticketing System (KITS)</h1>
+      </div>
+    </nav>
+    <nav class="navbar navbar-expand bg-light">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'kits:index' %}">New Ticket</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link active" href="{% url 'kits:warning_list' %}">Warnings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'kits:revive_list' %}">Revives</a>
+            </li>
+            {% if request.user.is_staff %}
+              <li class="nav-item">
+                <a class="nav-link active" href="/admin">Admin</a>
+              </li>
+            {% endif %}
+            {% if request.user.is_superuser %}
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'kits:game_config' %}">Game Config</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'kits:server_config' %}">Server Config</a>
+              </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% if not request.user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'login' %}">Login</a>
+              </li>
+            {% endif %}
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <h5 class="nav-link active">Welcome back <a href="password">{{ user.get_username }}</a></h5>
+            </li>
+          </ul>
+          {% comment %} <form class="d-flex" method="GET" action="{% url 'kits:warning_list' %}">
+            {% csrf_token %}
+            <input class="form-control me-2" name="searched" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> {% endcomment %}
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+
+    {% block content %}
+    {% endblock %}
+
+        <!-- load JS libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.4.0/jquery.quicksearch.min.js"></script> -->
+        <script src="{% static "kits/js/functions.js" %}"></script>
+        <script src="{% static "kits/js/jquery.multi-select.js" %}"></script>
+        <script src="{% static "kits/js/jquery.quicksearch.js" %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <!-- <script type="text/javascript">
+            // run pre selected options
+            $('[id^=rbSelect]').multiSelect();
+        </script> -->
+  </body>
+</html>

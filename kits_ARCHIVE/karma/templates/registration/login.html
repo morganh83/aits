@@ -1,0 +1,24 @@
+{% extends "../base_login.html" %}
+
+{% block content %}
+    <div class="container d-flex opacity login-form my-auto h-25 w-25">
+        {% if form.errors %}
+            <p>Your Username or Password was incorrect. Get Good!</p>
+        {% endif %}
+
+        {% if next %}
+            {% if user.is_authenticated %}
+                <p>Your account doesn't have access to this page. To proceed,
+                please login with an account that has access.</p>
+            {% endif %}
+        {% endif %}
+        
+        <form method="post" action="{% url 'login' %}" style="width: 50%; margin-left: 25%">
+            {% csrf_token %}
+            <p>{{ form.username.label_tag }} {{ form.username }}</p>
+            <p>{{ form.password.label_tag }} {{ form.password }}</p>
+            <input class="btn btn-info mt-4" type="submit" value="Login" />
+        </form>
+    </div>
+
+{% endblock %}

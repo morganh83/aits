@@ -1,0 +1,85 @@
+{% extends 'baseDark.html' %}
+{% block content %}
+    <div class="container opacity">
+        <div class="row">
+            <div class="col-lg-16">
+                <h1>Tickets</h1>
+                <div class="input-group">
+                    <div class="form-outline">
+                        <form class="d-flex" method="GET" action="{% url 'kits:warning_list' %}">
+                            {% csrf_token %}
+                            <input class="form-control" name="searched" type="search" placeholder="Search" aria-label="Search">
+                            <button type="submit" class="btn btn-primary" value="Search">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                </svg>
+                            </button>
+                        </form>
+                  </div>
+                <table class="table" style="color:rgb(255,255,255);">
+                    <thead>
+                        <tr>
+                            <th>Created</th>
+                            <th>Edited</th>
+                            <th>Mods</th>
+                            <th>Username</th>
+                            <th>Steam ID</th>
+                            <th>IG Name</th>
+                            <th>Punishment</th>
+                            <th>Length</th>
+                            <th>Reason</th>
+                            <th>Rules Broken</th>
+                            <th>Ticket Link</th>
+                            <th>Counter Link</th>
+                            <th>Edit</th>
+                            {% comment %} <th>Delete</th> {% endcomment %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticket in all_warnings %}
+                            <tr>
+                                <td>{{ ticket.createdAt }}</td>
+                                <td>{{ ticket.updatedAt }}</td>
+                                <td>{{ ticket.basemodName }}</td>
+                                <td>{{ ticket.baseUsername }}</td>
+                                <td><a href="kits/player_detail/{{ tickets.Offsteamid }}">{{ ticket.Offsteamid }}</a></td>
+                                <td>{{ ticket.OffigName }}</td>
+                                <td>{{ ticket.Offpunishment }}</td>
+                                <td>{{ ticket.OffbanTime }}</td>
+                                <td>{{ ticket.Offreason }}</td>
+                                <td>{{ ticket.Offrules }}</td>
+                                <td>{{ ticket.revSteamid }}</td>
+                                <td>{{ ticket.baseUsername }}</td>
+                                <td>{{ ticket.revdinoName }}</td>
+                                <td>{{ ticket.revgrowth }}</td>
+                                <td>{{ ticket.basemodName }}</td>
+                                <td>{{ ticket.revd }}</td>
+                                <td>
+                                    {% if ticket.baseticketLink == '' or ticket.baseticketLink == null %}
+                                        -
+                                    {% elif "http" in ticket.baseticketLink %}
+                                        <a href="{{ ticket.baseticketLink }}">Ticket</a>
+                                    {% else %}
+                                        {{ ticket.baseticketLink }}
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if ticket.basecounterLink == '' or ticket.basecounterLink == null %}
+                                        -
+                                    {% elif "http" in ticket.basecounterLink %}
+                                        <a href="{{ ticket.basecounterLink }}">Counter</a>
+                                    {% else %}
+                                        {{ ticket.basecounterLink }}
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="kits/tickets_update/{{ ticket.id }}" class="btn btn-primary">Edit</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

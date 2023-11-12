@@ -1,0 +1,2 @@
+Secure with TLS encryption
+https://testdriven.io/blog/django-lets-encrypt/

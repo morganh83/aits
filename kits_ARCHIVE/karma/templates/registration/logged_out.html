@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends "../base_login.html" %}
+
+{% block content %}
+
+    <div class="container d-flex opacity login-form">
+        <div class="col-md-4">
+            <p>You are not logged in</p>
+            <input type="button" class="btn btn-primary" value="Login" onclick="window.location.href='{% url 'login' %}?next={% url 'login' %}'">
+        </div>
+    </div>
+{% endblock %}

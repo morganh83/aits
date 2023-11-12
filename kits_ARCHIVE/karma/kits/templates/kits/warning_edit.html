@@ -1,0 +1,337 @@
+{% extends 'baseDark.html' %}
+
+{% block content %}
+<br>
+<style>
+  svg {
+    cursor: pointer;
+  }
+
+  option {
+    cursor: pointer !important;
+  }
+
+  option:hover {
+    background-color: azure;
+  }
+</style>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 opacity">
+          <div class="row">
+            <form id="ticketform" method="POST">
+              <div class="mb-2">
+                <h3>Ticket Form</h3>
+              </div>
+              <!-- OFFENDER TABLE -->
+              <div class="mb-2">
+                <table id="punishTable" class="table table-borderless">
+                  <tbody class="multi" id="punT">
+                    <tr>
+                      <td>
+                        <div class="mb-1">
+                          {{ form.userName }}
+                        </div>
+                      </td>
+                      <td>
+                        <div class="mb-1">
+                          {{ form.steamId }}
+                        </div>
+                      </td>
+                      <td>
+                        <div class="mb-1">
+                          {{ form.discName }}
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="mb-1 dropdown">
+                          <select
+                          name="punishment"
+                          class="form-control"
+                          id="id_revdinoName"
+                        >
+                          <option value="" disabled selected>Select Dino</option>
+                          {% for strike in strike_list %}
+                          <option value="{{strike}}">{{strike}}</option>
+                          {% endfor %}
+                        </select>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="mb-1 dropdown">
+                          <select
+                          name="banTime"
+                          class="form-control"
+                          id="id_revdinoName"
+                        >
+                          <option value="" disabled selected>Select Dino</option>
+                          {% for ban in ban_list %}
+                          <option value="{{ban}}">{{ban}}</option>
+                          {% endfor %}
+                        </select>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="mb-1">
+                          {{ form.banTimeOther }}
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              onkeyup="filterEditItems(this);"
+                              placeholder="Search through rules"
+                              style="
+                                border-bottom-left-radius: 0;
+                                border-bottom-right-radius: 0;
+                              "
+                            />
+                            <div class="form-check form-switch form-control center" style="border-radius:0;position: relative;">
+                              <div style="position: absolute;top:50%;left:27.5%;transform:translate(-50%,-50%)">
+                                Rule ID
+                              </div>
+                              <label class="form-check-label" for="revivecheck" style="color: #000;">
+                                <input type="checkbox" class="form-check-input" id="filter_type" onclick="filterEditType(this)">
+                                </label>
+                              <div style="position: absolute;top:50%;left:70%;transform:translate(-50%,-50%)">
+                                Description
+                              </div>
+                            </div>
+                            <select
+                              style="
+                                margin-top: -2px;
+                                height: 212px;
+                                border-top-left-radius: 0;
+                                border-top-right-radius: 0;
+                              "
+                              multiple
+                              name="allRules"
+                              class="form-control non-bs__scroll"
+                              id="id_allRules"
+                            >
+                              {% for rule in excluded_rule_list %}
+    
+                              <option
+                                style="display:none;"
+                                id="{{rule.rules}}"
+                                value="{{rule.description}}"
+                                onclick="addEditRule(this)"
+                              >
+                                {{rule.rules}} - {{rule.description}}
+                              </option>
+    
+                              {% endfor %}
+
+                              {% for rule in rule_list %}
+    
+                              <option
+                                id="{{rule.rules}}"
+                                value="{{rule.description}}"
+                                onclick="addEditRule(this)"
+                              >
+                                {{rule.rules}} - {{rule.description}}
+                              </option>
+    
+                              {% endfor %}
+                            </select>
+                          </div>
+                          <div
+                            class="col-2"
+                            style="color: white; position: relative"
+                          >
+                            <div
+                              style="
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                              "
+                            >
+                              <h6 style="display: inline-block; text-align: center">
+                                Click to switch
+                              </h6>
+                              <img
+                                class="arrow-switch"
+                                style="
+                                  display: block;
+                                  transform: rotate(90deg);
+                                  width: 50%;
+                                  margin: 0 auto;
+                                "
+                                src="../../static/kits/img/switch_arrows.png"
+                              />
+                            </div>
+                          </div>
+                          <div class="col-5">
+                            <select
+                              multiple
+                              name="selectedRules"
+                              class="form-control non-bs__scroll"
+                              id="id_selectedRules"
+                              style="height: 289px;"
+                            >
+                              <option
+                                value=""
+                                disabled
+                                style="
+                                  background-color: white !important;
+                                  cursor: default !important;
+                                "
+                              >
+                                Add Rules that the player offended.
+                              </option>
+                              
+                              {% for rule in broken_list %}
+    
+                              <option
+                                id="{{rule.rules}}"
+                                onclick="removeEditRule(this)"
+                              >
+                                {{rule.rules}} - {{rule.description}}
+                              </option>
+    
+                              {% endfor %}
+                            </select>
+                          </div>
+                        </div>
+                        <hr />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="mb-1">
+                          {{ form.reason }}
+                        </div>
+                        <hr>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div class="mb-3">
+                {{ form.addtlMods }}
+              </div>
+              <div class="mb-3">
+                {{ form.ticketLink }}
+              </div>
+              <div class="mb-3">
+                {{ form.counterLink }}
+              </div>
+
+              {% csrf_token %}
+
+              <div class="mb-3 col text-center">
+
+                <button class="btn btn-info" class="form-control" type="button" name="submitticketform" onclick="editSubmit('{{ csrf_token }}')">SUBMIT</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+  filter = true;
+  var optionsEditCache = [];
+  var sel = document.getElementById('id_allRules');
+  optionsEditCache = [];
+  for (var i = 0, iLen = sel.options.length; i < iLen; i++) {
+      optionsEditCache.push(sel.children[i]);
+  }
+
+  function filterEditType(filter_btn) {
+      if (filter) {
+          filter = false;
+      }
+      else {
+          filter = true;
+      }
+      input = filter_btn.parentNode.parentNode.parentNode.children[0]
+      input.value = "";
+      restoreEditOptions();
+  }
+
+  function filterEditItems(el) {
+      var value = el.value.toLowerCase();
+      var sel = el.parentNode.children[2];
+      if (value == '') {
+          restoreEditOptions();
+      } else {
+          for (var i = sel.options.length - 1; i >= 0; i--) {
+              opt = sel.options[i];
+              if (filter) {
+                  if (opt.id.toLowerCase().indexOf(value) == -1) {
+                      sel.removeChild(opt)
+                  }
+              }
+              else {
+                  if (opt.value.toLowerCase().indexOf(value) == -1) {
+                      sel.removeChild(opt)
+                  }
+              }
+          }
+      }
+  }
+
+  function restoreEditOptions() {
+      var sel = document.getElementById('id_allRules');
+      sel.options.length = 0;
+      for (let i = 0; i < optionsEditCache.length; i++) {
+          sel.appendChild(optionsEditCache[i]);
+      }
+  }
+
+  function addEditRule(rule) {
+      var opt = document.createElement('option');
+      opt.id = rule.id;
+      opt.innerHTML = rule.innerHTML;
+      opt.onclick = function () {
+          $(opt).parent().parent().parent().first().first().find('#' + opt.id).show();
+          $(opt).remove();
+      };
+      $("#id_selectedRules").append(opt);
+      $(rule).hide();
+  }
+
+  function removeEditRule(opt) {
+    $('#id_allRules').find('#' + opt.id).show();
+    $(opt).remove();
+  }
+
+  function editSubmit(csrf) {
+    brokenRules = [];
+    all_options = document.getElementById('id_selectedRules').children;
+    for (let i = 0; i < all_options.length; i++) {
+      brokenRules.push(all_options[i].id);
+    }
+
+    var all_args = window.location.href.split("/");
+
+    fetch(String(window.origin) + '/rules_edit/', {
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify({"rules": brokenRules, "id": all_args[all_args.length - 1]}),
+        cache: 'no-cache',
+        headers: {
+            'content-type': 'application/json',
+            'X-CSRFToken': csrf
+        }
+    })
+        .then((response) => {
+            response.json().then((dataReply) => {
+                if (dataReply["response"] == 200) {
+                  $('#ticketform').submit()
+                }
+            });
+        });
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'baseDark.html' %}
+        
+{% block title %}Karma Rules{% endblock %}
+
+{% block content %}
+    <div class="container opacity">
+        {% for rule in all_rules %}
+            <div class="mb-2" >
+                <table class="table table-borderless" style="color:rgb(255,255,255);">
+                    <tr>
+                        <td>
+                            <p><b><u>{{ rule.rules }}</b> - {{ rule.description }}</u></p>
+                        <td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{ rule.clarity }}
+                        <td>
+                    </tr>
+                </table>
+                {% comment %} {{ rule.rules }}
+                {{ rule.description }}
+                {{ rule.clarity }} {% endcomment %}
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

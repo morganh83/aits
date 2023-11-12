@@ -1,0 +1,47 @@
+{% extends 'baseDark.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Tickets</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Created</th>
+                            <th>Edited</th>
+                            <th>Mods</th>
+                            <th>Username</th>
+                            <th>Steam ID</th>
+                            <th>IG Name</th>
+                            <th>Punishment</th>
+                            <th>Reason</th>
+                            <th>Length</th>
+                            <th>Rules Broken</th>
+                            <th>Ticket Link</th>
+                            <th>Counter Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticket in all_PlayerTickets %}
+                            <tr>
+                                <td>{{ ticket.createdAt }}</td>
+                                <td>{{ ticket.updatedAt }}</td>
+                                <td>{{ ticket.basemodName }}</td>
+                                <td>{{ ticket.baseUsername }}</td>
+                                <td>{{ ticket.Offsteamid }}</td>
+                                <td>{{ ticket.OffigName }}</td>
+                                <td>{{ ticket.Offpunishment }}</td>
+                                <td>{{ ticket.Offreason }}</td>
+                                <td>{{ ticket.OffbanTime }}</td>
+                                <td>{{ ticket.Offrules }}</td>
+                                <td><a href="{{ ticket.baseticketLink }}">Ticket</a></td>
+                                <td><a href="{{ ticket.basecounterLink }}">Counter</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

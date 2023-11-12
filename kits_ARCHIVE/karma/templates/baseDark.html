@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KITS</title>
+    <link rel="icon" type="image/png" href="{% static 'kits/img/favicon.ico' %}"/>
+    <!-- load bootstrap and CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "kits/css/master.css" %}"/>
+    <link rel="stylesheet" href="{% static "kits/css/fields.css" %}"/>
+    <link rel="stylesheet" href="{% static "kits/css/multi-select.css" %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+
+  </head>
+  <body>
+    <!-- Navbar Title -->
+    <nav class="navbar navbar-dark bg-dark navbar-fixed-top">
+      <div class="container-fluid">
+        <h1 class="col text-center">Karma Interactive Ticketing System (KITS)</h1>
+      </div>
+    </nav>
+    <hr style="padding: 0px; margin: 0px;">
+    <!-- Navbar Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mb-2">
+                    <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'kits:index' %}">New Ticket</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'kits:warning_list' %}">Warnings</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'kits:revive_list' %}">Revives</a>
+                    </li>
+                    {% if request.user.is_staff %}
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Admin
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/admin">Admin Page</a></li>
+                        {% if request.user.is_superuser %}
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item"href="{% url 'kits:game_config' %}">Game Config</a></li>
+                            <li><a class="dropdown-item" href="{% url 'kits:server_config' %}">Server Config</a></li>
+                        {% endif %}
+                        </ul>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item dropdown mr-auto dropdown-menu-end">
+                        <a class="nav-link dropdown-toggle me-2" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Account</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="password">Change Password</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout {{ user.get_username }}</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" target="_blank" href="https://docs.google.com/spreadsheets/d/1lEUtoQpTtl7rtuvxB9KFcToDnVxyjGFCU0NUN9EyaOc/edit?usp=sharing">Bug Report</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <hr style="padding: 0px; margin: 0px;">
+
+
+
+    <!-- Main Content -->
+    {% block content %}
+    {% endblock %}
+
+        <!-- load JS libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="{% static "kits/js/functions.js" %}"></script>
+        <script src="{% static "kits/js/jquery.multi-select.js" %}"></script>
+        <script src="{% static "kits/js/jquery.quicksearch.js" %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+{% extends 'baseDark.html' %}
+
+{% block content %}
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-16 opacity" style="overflow: auto;">
+                <h1>Revives</h1>
+                <div class="input-group">
+                    <div class="form-outline">
+                        <form class="d-flex" method="GET" action="{% url 'kits:revive_list' %}">
+                            {% csrf_token %}
+                            <input class="form-control" name="revsearched" type="search" placeholder="Search" aria-label="Search">
+                            <button type="submit" class="btn btn-primary" value="Search">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                </svg>
+                            </button>
+                        </form>
+                  </div>
+                <table class="table" style="color:rgb(255,255,255); padding: 10px;">
+                    <thead>
+                        <tr>
+                            <th>Date Added</th>
+                            <th>Updated</th>
+                            <th>Steam ID</th>
+                            <th>User Name</th>
+                            <th>Disc. ID</th>
+                            <th>Dino</th>
+                            <th>Growth</th>
+                            <th>Added by</th>
+                            <th>Revived?</th>
+                            <th>Ticket</th>
+                            <th>Counter</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticket in page_obj %}
+                            <tr>
+                                <td>{{ ticket.createdAt | date:"n/j/Y" }}</td>
+                                <td>{{ ticket.updatedAt | date:"n/j/Y" }}</td>
+                                <td>{{ ticket.steamId }}</td>
+                                <td>{{ ticket.userName }}</td>
+                                <td>{{ ticket.discName }}</td>
+                                <td>{{ ticket.dinoName }}</td>
+                                <td>{{ ticket.growth }}</td>
+                                <td>{{ ticket.modName }}
+                                    {% if ticket.addtlMods == 'None' or ticket.addtlMods == '' or ticket.addtlMods == null %}
+                                    {% else %}
+                                        , {{ ticket.addtlMods }}
+                                    {% endif %}</td>
+                                <td>{{ ticket.revd }}</td>
+                                <td>
+                                    {% if ticket.ticketLink == '' or ticket.ticketLink == null %}
+                                        -
+                                    {% elif "http" in ticket.ticketLink %}
+                                        <a target="_blank" href="{{ ticket.ticketLink }}">Ticket</a>
+                                    {% else %}
+                                        {{ ticket.ticketLink }}
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if ticket.counterLink == '' or ticket.counterLink == null %}
+                                        -
+                                    {% elif "http" in ticket.counterLink %}
+                                        <a target="_blank" href="{{ ticket.counterLink }}">Counter</a>
+                                    {% else %}
+                                        {{ ticket.counterLink }}
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="kits/rtickets_update/{{ ticket.id }}" class="btn btn-primary">Edit</a>
+                                    <a href="kits/rtickets_delete/{{ ticket.id }}" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                        {% endif %}
+                
+                        <span class="current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </span>
+                
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">next</a>
+                            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

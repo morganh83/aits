@@ -1,0 +1,27 @@
+{% extends 'baseDark.html' %}
+
+{% block content %}
+    {% if request.user.is_superuser %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Server Config</h1>
+                    <form method="post">
+                        {{ form }}
+                        {% csrf_token %}
+                        <input type="submit" onclick="return confirm('Are you Sure?')" class="btn btn-primary form-control" />
+                    </form>
+                </div> 
+            </div>
+        </div>
+    {% else %}
+        <div class="container opacity">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Git Gud!</h3>
+                </div> 
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+

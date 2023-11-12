@@ -1,0 +1,881 @@
+{% extends 'baseDark.html' %}
+
+{% block content %}
+<br />
+<link href="../../static/kits/css/fields.css" rel="stylesheet" />
+<style>
+  svg {
+    cursor: pointer;
+  }
+
+  option {
+    cursor: pointer !important;
+  }
+
+  option:hover {
+    background-color: azure;
+  }
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 opacity">
+      <div class="row">
+        <form id="ticketform" method="POST" onsubmit="return false">
+          <div class="mb-2">
+            <h3>Ticket Form</h3>
+          </div>
+          <div class="mb-4">
+            <div class="mt-3">
+              <h5 class="text-center">Revives</h5>
+            </div>
+            <!-- Revive Table -->
+            <table id="reviveTable" class="table table-borderless">
+              <tbody id="rev_table1">
+                <tr>
+                  <td>
+                    <div>
+                      <input
+                        type="text"
+                        name="revUsername"
+                        class="form-control"
+                        placeholder="Player Name"
+                        maxlength="200"
+                        id="id_revUsername"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input
+                        type="number"
+                        name="revSteamid"
+                        class="form-control"
+                        minlength="17"
+                        placeholder="Revive Steam ID"
+                        id="id_revSteamid"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input
+                        type="number"
+                        name="revDiscordID"
+                        class="form-control"
+                        placeholder="Revive Discord ID"
+                        maxlength="200"
+                        id="id_revDiscordID"
+                      />
+                    </div>
+                  </td>
+                  <td class="tg-0lax" rowspan="2">
+                    <svg
+                      onclick="addNewLine()"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="addNewLine"
+                      width="32"
+                      height="32"
+                      fill="#2cfc03"
+                      class="bi bi-plus-circle"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                      />
+                      <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                      />
+                    </svg>
+                    <br />
+                    <svg
+                      style="margin-top: 10px"
+                      onclick="remLine(this)"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="rmLine"
+                      width="32"
+                      height="32"
+                      fill="red"
+                      class="bi bi-dash-circle"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                      />
+                      <path
+                        d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <input
+                        type="number"
+                        name="revgrowth"
+                        class="form-control"
+                        placeholder="Growth"
+                        step="0.01"
+                        id="id_revgrowth"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="dropdown">
+                      <select
+                        name="revdinoName"
+                        class="form-control"
+                        id="id_revdinoName"
+                      >
+                        <option value="" disabled selected>Select Dino</option>
+                        {% for dino in dino_list %}
+                        <option value="{{ dino.dino }}">{{ dino.dino }}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-switch form-control center">
+                      <label
+                        class="form-check-label"
+                        for="revivecheck"
+                        style="color: #000"
+                      >
+                        <input
+                          type="checkbox"
+                          name="revd"
+                          class="form-check-input"
+                          id="id_revd"
+                        />
+                        Revived?</label
+                      >
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- OFFENDER TABLE -->
+          <div class="mb-2">
+            <div class="mt-3">
+              <h5 class="text-center">Punishments</h5>
+            </div>
+            <table id="punishTable" class="table table-borderless">
+              <tbody class="multi" id="punT1">
+                <tr>
+                  <td>
+                    <div class="mb-1">
+                      <input
+                        type="text"
+                        name="OffigName"
+                        class="form-control"
+                        placeholder="Player Name"
+                        maxlength="100"
+                        id="id_OffigName"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="mb-1">
+                      <input
+                        onkeyup="steamIdGet(this, '{{ csrf_token }}')"
+                        type="number"
+                        name="Offsteamid"
+                        class="form-control"
+                        minlength="17"
+                        placeholder="Offender Steam ID"
+                        id="id_Offsteamid"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="mb-1">
+                      <input
+                        type="number"
+                        name="OffdiscName"
+                        class="form-control"
+                        placeholder="Offender Disc ID"
+                        maxlength="100"
+                        id="id_OffdiscName"
+                      />
+                    </div>
+                  </td>
+                  <td class="tg-0lax" rowspan="4">
+                    <svg
+                      onclick="addNewPunishLine()"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="addNewPunishLine"
+                      width="32"
+                      height="32"
+                      fill="#2cfc03"
+                      class="bi bi-plus-circle"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                      />
+                      <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                      />
+                    </svg>
+                    <br /><br />
+                    <svg
+                      onclick="rmLinePunish(this)"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="rmLinePunish"
+                      width="32"
+                      height="32"
+                      fill="red"
+                      class="bi bi-dash-circle"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                      />
+                      <path
+                        d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mb-1 dropdown">
+                      <select
+                        name="Offpunishment"
+                        class="form-control"
+                        id="id_Offpunishment"
+                      >
+                        <option value="" disabled selected>
+                          Select Punishment
+                        </option>
+                        {% for strike in strike_list %}
+                          <option value="{{strike.strike}}">
+                            {{strike.strike}}
+                          </option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="mb-1 dropdown">
+                      <select
+                        name="OffbanTime"
+                        class="form-control"
+                        id="id_OffbanTime"
+                      >
+                        <option value="" disabled selected>
+                          Select Ban Length
+                        </option>
+                          {% for ban in ban_list %}
+                            <option value="{{ban.banLen}}">{{ban.banLen}}</option>
+                          {% endfor %}
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="mb-1">
+                      <input
+                        type="text"
+                        name="OffbanTimeOther"
+                        class="form-control"
+                        placeholder="Other Ban Length"
+                        maxlength="100"
+                        id="id_OffbanTimeOther"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <div class="row">
+                      <div class="col">
+                        <textarea
+                          name="Offreason"
+                          cols="35"
+                          rows="3"
+                          class="form-control"
+                          placeholder="Reason/Notes"
+                          maxlength="2000"
+                          style="height: 150px; resize: none"
+                          id="id_Offreason"
+                        ></textarea>
+                      </div>
+                      <div
+                        class="col"
+                        style="
+                          height: 150px;
+                          overflow-y: scroll;
+                          background: white;
+                          border-radius: 5px;
+                          position: relative;
+                        "
+                      >
+                        <div
+                          id="previous_text"
+                          style="
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            text-align: center;
+                          "
+                        >
+                          Enter a Steam ID to check previous offenses
+                        </div>
+                        <table
+                          id="previous_table"
+                          class="table"
+                          style="
+                            background: white;
+                            border-radius: 5px;
+                            text-align: center;
+                          "
+                        >
+                          <thead>
+                            <tr>
+                              <td scope="col" id="previous_count"></td>
+                              <td scope="col"></td>
+                              <td scope="col" id="previous_disc_id"></td>
+                            </tr>
+                          </thead>
+                          <tbody id="previous_offences"></tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <div class="row">
+                      <div class="col-5">
+                        <input
+                          type="text"
+                          class="form-control"
+                          onkeyup="filterItems(this);"
+                          placeholder="Search through rules"
+                          style="
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 0;
+                          "
+                        />
+                        <div class="form-check form-switch form-control center" style="border-radius:0;position: relative;">
+                          <div style="position: absolute;top:50%;left:27.5%;transform:translate(-50%,-50%)">
+                            Rule ID
+                          </div>
+                          <label class="form-check-label" for="revivecheck" style="color: #000;">
+                            <input type="checkbox" class="form-check-input" id="filter_type" onclick="filterType(this)">
+                            </label>
+                          <div style="position: absolute;top:50%;left:70%;transform:translate(-50%,-50%)">
+                            Description
+                          </div>
+                        </div>
+                        <select
+                          style="
+                            margin-top: -2px;
+                            height: 212px;
+                            border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                          "
+                          multiple
+                          name="allRules"
+                          class="form-control non-bs__scroll"
+                          id="id_allRules"
+                        >
+                          {% for rule in rule_list %}
+
+                          <option
+                            id="{{rule.rules}}"
+                            value="{{rule.description}}"
+                            onclick="addRule(this)"
+                          >
+                            {{rule.rules}} - {{rule.description}}
+                          </option>
+
+                          {% endfor %}
+                        </select>
+                      </div>
+                      <div
+                        class="col-2"
+                        style="color: white; position: relative"
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                          "
+                        >
+                          <h6 style="display: inline-block; text-align: center">
+                            Click to switch
+                          </h6>
+                          <img
+                            class="arrow-switch"
+                            style="
+                              display: block;
+                              transform: rotate(90deg);
+                              width: 50%;
+                              margin: 0 auto;
+                            "
+                            src="../../static/kits/img/switch_arrows.png"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-5">
+                        <select
+                          multiple
+                          name="selectedRules"
+                          class="form-control non-bs__scroll"
+                          id="id_selectedRules"
+                          style="height: 289px;"
+                        >
+                          <option
+                            value=""
+                            disabled
+                            style="
+                              background-color: white !important;
+                              cursor: default !important;
+                            "
+                          >
+                            Add Rules that the player offended.
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <hr />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                name="baseaddtlMods"
+                class="form-control"
+                placeholder="Additional Mods"
+                maxlength="100"
+                id="id_baseaddtlMods"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                name="baseticketLink"
+                class="form-control"
+                placeholder="Ticket Link"
+                maxlength="500"
+                id="id_baseticketLink"
+              />
+            </div>
+            <div class="col mt">
+              <input
+                type="text"
+                name="basecounterLink"
+                class="form-control"
+                placeholder="Counter Link"
+                maxlength="100"
+                id="id_basecounterLink"
+              />
+            </div>
+          </div>
+          <div class="mb-3 col text-center">
+
+            <div class="btn btn-info form-control mt-4 mb-4" onclick="submit('{{ csrf_token }}')">
+              SUBMIT
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<template id="template_punish">
+  <tbody class="multi" id="punT">
+    <tr>
+      <td>
+        <div class="mb-1">
+          <input
+            type="text"
+            name="OffigName"
+            class="form-control"
+            placeholder="Player Name"
+            maxlength="100"
+            id="id_OffigName"
+          />
+        </div>
+      </td>
+      <td>
+        <div class="mb-1">
+          <input
+            onkeyup="steamIdGet(this, '{{ csrf_token }}')"
+            type="number"
+            name="Offsteamid"
+            class="form-control"
+            minlength="17"
+            placeholder="Offender Steam ID"
+            id="id_Offsteamid"
+          />
+        </div>
+      </td>
+      <td>
+        <div class="mb-1">
+          <input
+            type="number"
+            name="OffdiscName"
+            class="form-control"
+            minlength="17"
+            placeholder="Offender Disc ID"
+            maxlength="100"
+            id="id_OffdiscName"
+          />
+        </div>
+      </td>
+      <td class="tg-0lax" rowspan="4">
+        <svg
+          onclick="addNewPunishLine()"
+          xmlns="http://www.w3.org/2000/svg"
+          id="addNewPunishLine"
+          width="32"
+          height="32"
+          fill="#2cfc03"
+          class="bi bi-plus-circle"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path
+            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+          />
+        </svg>
+        <br /><br />
+        <svg
+          onclick="rmLinePunish(this)"
+          xmlns="http://www.w3.org/2000/svg"
+          id="rmLinePunish"
+          width="32"
+          height="32"
+          fill="red"
+          class="bi bi-dash-circle"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+        </svg>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="mb-1 dropdown">
+          <select
+            name="Offpunishment"
+            class="form-control"
+            id="id_Offpunishment"
+          >
+            <option value="" disabled selected>Select Punishment</option>
+            {% for strike in strike_list %}
+            <option value="{{strike.strike}}">{{strike.strike}}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </td>
+      <td>
+        <div class="mb-1 dropdown">
+          <select name="OffbanTime" class="form-control" id="id_OffbanTime">
+            <option value="" disabled selected>Select Ban Length</option>
+            {% for ban in ban_list %}
+            <option value="{{ban.banLen}}">{{ban.banLen}}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </td>
+      <td>
+        <div class="mb-1">
+          <input
+            type="text"
+            name="OffbanTimeOther"
+            class="form-control"
+            placeholder="Other Ban Length"
+            maxlength="100"
+            id="id_OffbanTimeOther"
+          />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <div class="row">
+          <div class="col">
+            <textarea
+              name="Offreason"
+              cols="40"
+              rows="3"
+              class="form-control"
+              placeholder="Reason/Notes"
+              maxlength="1000"
+              style="height: 150px; resize: none"
+              id="id_Offreason"
+            ></textarea>
+          </div>
+          <div
+            class="col"
+            style="
+              height: 150px;
+              overflow-y: scroll;
+              background: white;
+              border-radius: 5px;
+              position: relative;
+            "
+          >
+            <div
+              id="previous_text"
+              style="
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+              "
+            >
+              Enter a Steam ID to check previous offences
+            </div>
+            <table
+              id="previous_table"
+              class="table"
+              style="background: white; border-radius: 5px; text-align: center"
+            >
+              <thead>
+                <tr>
+                  <td scope="col" id="previous_count"></td>
+                  <td scope="col" id="previous_disc_id"></td>
+                </tr>
+              </thead>
+              <tbody id="previous_offences"></tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <div class="row">
+          <div class="col-5">
+            <input
+              type="text"
+              class="form-control"
+              onkeyup="filterItems(this);"
+              placeholder="Search through rules (Rule ID)"
+              style="
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+              "
+            />
+            <div class="form-check form-switch form-control center" style="border-radius:0;position: relative;">
+              <div style="position: absolute;top:50%;left:27.5%;transform:translate(-50%,-50%)">
+                Rule ID
+              </div>
+              <label class="form-check-label" for="revivecheck" style="color: #000;">
+                <input type="checkbox" class="form-check-input" id="filter_type" onchange="filterType(this)">
+                </label>
+              <div style="position: absolute;top:50%;left:70%;transform:translate(-50%,-50%)">
+                Description
+              </div>
+            </div>
+            <select
+              style="
+                height: 212px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                margin-top: -2px;
+              "
+              multiple
+              name="allRules"
+              class="form-control non-bs__scroll"
+              id="id_allRules"
+            >
+              {% for rule in rule_list %}
+
+              <option
+                id="{{rule.rules}}"
+                value="{{rule.description}}"
+                onclick="addRule(this)"
+              >
+                {{rule.rules}} - {{rule.description}}
+              </option>
+
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-2" style="color: white; position: relative">
+            <div
+              style="
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <h6 style="display: inline-block; text-align: center">
+                Click to switch
+              </h6>
+              <img
+                class="arrow-switch"
+                style="
+                  display: block;
+                  transform: rotate(90deg);
+                  width: 50%;
+                  margin: 0 auto;
+                "
+                src="../../static/kits/img/switch_arrows.png"
+              />
+            </div>
+          </div>
+          <div class="col-5">
+            <select
+              multiple
+              name="selectedRules"
+              class="form-control non-bs__scroll"
+              id="id_selectedRules"
+              style="height: 289px;"
+            >
+              <option
+                value=""
+                disabled
+                style="
+                  background-color: white !important;
+                  cursor: default !important;
+                "
+              >
+                Add Rules that the player offended.
+              </option>
+            </select>
+          </div>
+        </div>
+        <hr />
+      </td>
+    </tr>
+  </tbody>
+</template>
+<template id="template_rev">
+  <tbody id="rev_table">
+    <tr>
+      <td>
+        <div>
+          <input
+            type="text"
+            name="revUsername"
+            class="form-control"
+            placeholder="Player Name"
+            maxlength="200"
+            id="id_revUsername"
+          />
+        </div>
+      </td>
+      <td>
+        <div>
+          <input
+            type="number"
+            name="revSteamid"
+            class="form-control"
+            minlength="17"
+            placeholder="Revive Steam ID"
+            id="id_revSteamid"
+          />
+        </div>
+      </td>
+      <td>
+        <div>
+          <input
+            type="number"
+            name="revDiscordID"
+            class="form-control"
+            placeholder="Revive Discord ID"
+            maxlength="200"
+            id="id_revDiscordID"
+          />
+        </div>
+      </td>
+      <td class="tg-0lax" rowspan="2">
+        <svg
+          onclick="addNewLine()"
+          xmlns="http://www.w3.org/2000/svg"
+          id="addNewLine"
+          width="32"
+          height="32"
+          fill="#2cfc03"
+          class="bi bi-plus-circle"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path
+            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+          />
+        </svg>
+        <br />
+        <svg
+          onclick="remLine(this)"
+          style="margin-top: 10px"
+          xmlns="http://www.w3.org/2000/svg"
+          id="rmLine"
+          width="32"
+          height="32"
+          fill="red"
+          class="bi bi-dash-circle"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+        </svg>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            type="number"
+            name="revgrowth"
+            class="form-control"
+            placeholder="Growth"
+            step="0.01"
+            id="id_revgrowth"
+          />
+        </div>
+      </td>
+      <td>
+        <div class="dropdown">
+          <select name="revdinoName" class="form-control" id="id_revdinoName">
+            <option value="" disabled selected>Select Dino</option>
+            {% for dino in dino_list %}
+            <option value="{{dino.dino}}">{{dino.dino}}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </td>
+      <td>
+        <div class="form-check form-switch form-control center">
+          <label class="form-check-label" for="revivecheck" style="color: #000">
+            <input
+              type="checkbox"
+              name="revd"
+              class="form-check-input"
+              id="id_revd"
+            />
+            Revived?</label
+          >
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</template>
+{% endblock %}
