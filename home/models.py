@@ -45,7 +45,6 @@ class ticket(models.Model):
     transcript = models.TextField()
     status = models.CharField(max_length=64)
     appeal = models.TextField()
-    
 
     def __str__(self):
         return self.id
