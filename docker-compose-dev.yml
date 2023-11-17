@@ -4,7 +4,7 @@ services:
     image: postgres:15.1-bullseye
     restart: always
     ports:
-      - "5432:5432"
+      - ${DB_PORT}:5432
     environment:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_USER=${DB_USERNAME}
@@ -42,6 +42,7 @@ services:
              python manage.py runserver 0.0.0.0:8000"
     networks:
       - db_network
+
 networks:
   db_network:
     driver: bridge
