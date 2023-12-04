@@ -24,4 +24,3 @@ networks:
     driver: bridge
   web_network:
     driver: bridge
- 
