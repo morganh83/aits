@@ -6,11 +6,11 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Set work directory
-WORKDIR /aims
+WORKDIR /astra
 
 # Install dependencies
-COPY requirements.txt /aims/
+COPY requirements.txt /astra/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project
-COPY . /aims/
+COPY . /astra/

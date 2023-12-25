@@ -1,7 +1,7 @@
 version: '3.8'
 services:
-  appseed-app:
-    container_name: appseed_app
+  astra:
+    container_name: astra
     restart: always
     build: .
     networks:
@@ -18,7 +18,7 @@ services:
     networks:
       - web_network
     depends_on: 
-      - appseed-app
+      - astra
 networks:
   db_network:
     driver: bridge
