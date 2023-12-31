@@ -7,7 +7,7 @@ services:
       - ${DB_PORT}:5432
     environment:
       - POSTGRES_DB=${DB_NAME}
-      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASS}
     volumes:
       - ./data/db:/var/lib/postgresql/data
@@ -16,7 +16,7 @@ services:
   
   web:
     ports:
-      - "8000:8000"
+      - "80:8000"
     build:
       context: .
       args:
@@ -24,12 +24,15 @@ services:
     depends_on:
       - db
     restart: always
+    env_file:
+      - .env
     volumes:
       - ./data/web:/vol/web
+      - ./astra:/astra
     environment:
       - DB_HOST=db
       - DB_NAME=${DB_NAME}
-      - DB_USERNAME=${DB_USERNAME}
+      - DB_USER=${DB_USER}
       - DB_PASS=${DB_PASS}
       - SECRET_KEY=${SECRET_KEY}
       - ALLOWED_HOSTS=${ALLOWED_HOSTS}
