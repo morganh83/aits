@@ -1,11 +1,23 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from . import views
+from .views import (
+    UserDetailView,
+    UserUpdateView,
+)
 
 urlpatterns = [
-    path("", views.index, name='index'),
-
-
+    # Base URLS #
+    path("", views.welcome, name='index'),
+    path("index", views.index, name='index'),
+    path("login", views.login_view, name='login'),
+    path("logout", views.logout_view, name='logout'),
+    path("initialize_admin", views.initialize_admin, name='initialize_admin'),
+    
+    # USER URLS #
+    path("profile/<int:pk>/", UserDetailView.as_view(), name='profile'),
+    path("edit_profile/<int:pk>", UserUpdateView.as_view(), name='edit_profile'),
+    
 
 
 
@@ -79,7 +91,7 @@ urlpatterns = [
     path("list", views.list, name='list'),
     path("loaders", views.loaders, name='loaders'),
     path("lockscreen", views.lockscreen, name='lockscreen'),
-    path("login", views.login, name='login'),
+    # path("login", views.login, name='login'),
     path("maps", views.maps, name='maps'),
     path("maps1", views.maps1, name='maps1'),
     path("maps2", views.maps2, name='maps2'),

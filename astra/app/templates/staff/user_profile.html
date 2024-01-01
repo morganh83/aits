@@ -14,7 +14,7 @@
 									<li class="breadcrumb-item active" aria-current="page">Profile</li>
 								</ol>
 							</div>
-							<div class="ms-auto pageheader-btn">
+							{% comment %} <div class="ms-auto pageheader-btn">
 								<a href="#" class="btn btn-primary btn-icon text-white me-2">
 									<span>
 										<i class="fe fe-plus"></i>
@@ -25,7 +25,7 @@
 										<i class="fe fe-log-in"></i>
 									</span> Export
 								</a>
-							</div>
+							</div> {% endcomment %}
 						</div>
 						<!-- PAGE-HEADER END -->
 
@@ -42,17 +42,20 @@
 															<img class="" src="{% static ''%}assets/images/users/8.jpg" alt="img">
 														</div>
 														<div class="user-wrap">
-															<h4>Elizabeth Dyer</h4>
-															<h6 class="text-muted mb-3">Member Since: November 2017</h6>
-															<a href="#" class="btn btn-primary mt-1 mb-1"><i class="fa fa-rss"></i> Follow</a>
-															<a href="emailservices" class="btn btn-secondary mt-1 mb-1"><i class="fa fa-envelope"></i> E-mail</a>
+															<h4>{{ user.username }}</h4>
+															<h6 class="text-muted mb-3">Member Since: {{ user.date_joined | date }}</h6>
+															<h6 class="text-muted mb-3">Last Login: {{ user.last_login | date }}</h6>
+															{% comment %} <a href="#" class="btn btn-primary mt-1 mb-1"><i class="fa fa-rss"></i> Follow</a>
+															<a href="emailservices" class="btn btn-secondary mt-1 mb-1"><i class="fa fa-envelope"></i> E-mail</a> {% endcomment %}
 														</div>
 													</div>
 												</div>
 												<div class="col-lg-12 col-md-12 col-xl-6">
 													<div class="text-xl-right mt-4 mt-xl-0">
-														<a href="emailservices" class="btn btn-white">Message</a>
-														<a href="editprofile" class="btn btn-primary">Edit Profile</a>
+														{% comment %} <a href="emailservices" class="btn btn-white">Message</a> {% endcomment %}
+														{% if request.user.is_superuser %}
+														<a href="{% url 'edit_profile' user.id %}" class="btn btn-primary">Edit Profile</a>
+														{% endif %}
 													</div>
 													<div class="mt-5">
 														<div class="main-profile-contact-list float-md-end d-lg-flex">
@@ -62,14 +65,14 @@
 																		<i class="fe fe-file-plus fs-20 text-white"></i>
 																	</div>
 																	<div class="media-body">
-																		<span class="text-muted">Posts</span>
+																		<span class="text-muted">Tickets</span>
 																		<div class="fw-semibold fs-25">
 																			328
 																		</div>
 																	</div>
 																</div>
 															</div>
-															<div class="me-5 mt-5 mt-md-0">
+															{% comment %} <div class="me-5 mt-5 mt-md-0">
 																<div class="media">
 																	<div class="media-icon bg-success me-3 mt-1">
 																		<i class="fe fe-users  fs-20 text-white"></i>
@@ -81,8 +84,8 @@
 																		</div>
 																	</div>
 																</div>
-															</div>
-															<div class="me-5 mt-5 mt-md-0">
+															</div> {% endcomment %}
+															{% comment %} <div class="me-5 mt-5 mt-md-0">
 																<div class="media">
 																	<div class="media-icon bg-orange me-3 mt-1">
 																		<i class="fe fe-wifi fs-20 text-white"></i>
@@ -94,7 +97,7 @@
 																		</div>
 																	</div>
 																</div>
-															</div>
+															</div> {% endcomment %}
 														</div>
 													</div>
 												</div>
@@ -106,10 +109,10 @@
 											<div class="tab-menu-heading">
 												<div class="tabs-menu1">
 													<ul class="nav">
-														<li class=""><a href="#tab-51" class="active show" data-bs-toggle="tab">Profile</a></li>
-														<li><a href="#tab-61" data-bs-toggle="tab" class="">Friends</a></li>
+														<li class=""><a href="#tab-51" class="active show" data-bs-toggle="tab">Details</a></li>
+														{% comment %} <li><a href="#tab-61" data-bs-toggle="tab" class="">Friends</a></li>
 														<li><a href="#tab-71" data-bs-toggle="tab" class="">Gallery</a></li>
-														<li><a href="#tab-81" data-bs-toggle="tab" class="">Followers</a></li>
+														<li><a href="#tab-81" data-bs-toggle="tab" class="">Followers</a></li> {% endcomment %}
 													</ul>
 												</div>
 											</div>
@@ -128,24 +131,24 @@
 													<table class="table row table-borderless">
 														<tbody class="col-lg-12 col-xl-6 p-0">
 															<tr>
-																<td><strong>Full Name :</strong> Elizabeth Dyer</td>
+																<td><strong>Username :</strong> {{ user.username }}</td>
 															</tr>
 															<tr>
-																<td><strong>Location :</strong> USA</td>
+																<td><strong>Timezone :</strong> {{ user.timezone }}</td>
 															</tr>
 															<tr>
-																<td><strong>Languages :</strong> English, German, Spanish.</td>
+																<td><strong>Languages :</strong> {{ user.languages }}</td>
 															</tr>
 														</tbody>
 														<tbody class="col-lg-12 col-xl-6 p-0">
 															<tr>
-																<td><strong>Website :</strong> abcdz.com</td>
+																<td><strong>Discord ID :</strong> {{ user.discord_id }}</td>
 															</tr>
 															<tr>
-																<td><strong>Email :</strong> georgemestayer@abcdz.com</td>
+																<td><strong>Steam ID :</strong> {{ user.steam_id }} </td>
 															</tr>
 															<tr>
-																<td><strong>Phone :</strong> +125 254 3562 </td>
+																<td><strong>Email :</strong> {{ user.email }}</td>
 															</tr>
 														</tbody>
 													</table>
@@ -153,18 +156,22 @@
 												<div class="row profie-img">
 													<div class="col-md-12">
 														<div class="media-heading">
-															<h5><strong>Biography</strong></h5>
+															<h5><strong>Bio</strong></h5>
 														</div>
 														<p>
-															Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus</p>
-														<p class="mb-0">because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter but because those who do not know how to pursue consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.</p>
+														{% if user.bio %}
+														{{ user.bio }}
+														{% else %}
+														No bio yet.
+														{% endif %}
+														</p>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-									<div class="tab-pane" id="tab-61">
+									{% comment %} <div class="tab-pane" id="tab-61">
 										<ul class="widget-users row  mb-5">
 											<li class="col-lg-4  col-md-6 col-sm-12 col-12">
 												<div class="card border p-0">
@@ -525,7 +532,7 @@
 												</div>
 											</div>
 										</div>
-									</div>
+									</div> {% endcomment %}
 								</div>
 							</div><!-- COL-END -->
 						</div>

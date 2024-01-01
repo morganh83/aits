@@ -1,24 +1,47 @@
 version: '3.8'
 services:
-  astra:
+  db:
+    image: postgres:15.1-bullseye
+    restart: always
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    networks:
+        - db_network
+  
+  app:
     container_name: astra
     restart: always
     build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
     networks:
       - db_network
       - web_network
+  
   nginx:
     container_name: nginx
     restart: always
     image: "nginx:latest"
     ports:
-      - "5085:5085"
+      - "443:443"
     volumes:
       - ./nginx:/etc/nginx/conf.d
     networks:
       - web_network
     depends_on: 
-      - astra
+      - app
+
+
 networks:
   db_network:
     driver: bridge

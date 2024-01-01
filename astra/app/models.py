@@ -3,12 +3,15 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    photo = models.ImageField(upload_to='staff/images', default='', blank=True, null=True)
     discord_id = models.CharField(max_length=100, blank=True, null=True)
     steam_id = models.CharField(max_length=100, blank=True, null=True)
+    timezeone = models.CharField(max_length=5, blank=True, null=True)
+    languages = models.CharField(max_length=200, default="English", blank=True, null=True)
+    bio = models.TextField(max_length=2000, default="", blank=True, null=True)
     admin_group = models.BooleanField(default=False)
     admin_plus_group = models.BooleanField(default=False)
     moderator_group = models.BooleanField(default=False)
-    
 
     def __str__(self):
         return self.user.username

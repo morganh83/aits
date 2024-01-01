@@ -6,6 +6,7 @@ import secrets
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
+LOGIN_URL = '/login'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -21,7 +22,12 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', True)
 PYTHONUNBUFFERED = os.environ.get('PYTHONUNBUFFERED', True)
-ALLOWED_HOSTS = []
+if 'ALLOWED_HOSTS' in os.environ:
+    ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS'].split(',')
+else:
+    ALLOWED_HOSTS = ['*']
+
+print(f"Allowed Hosts: {ALLOWED_HOSTS}")
 
 
 # Application definition
