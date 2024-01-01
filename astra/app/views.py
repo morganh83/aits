@@ -2,13 +2,24 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
-from .forms import CompleteUserForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth import logout
 import datetime, os
 
+from .forms import (
+    CompleteUserForm,
+    UserUpdateForm,
+)
+from .models import (
+    UserProfile,
+    dinoName,
+    strikeType,
+    banLength,
+    Rule,
+    revTicket,
+)
 
 
 # Base views (login, logout, initialize admin, welcome, index) #
@@ -89,6 +100,30 @@ class UserDetailView(LoginRequiredMixin, DetailView):
         user = User.objects.get(pk=self.kwargs['pk'])
         return context
 
+class UserUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = UserProfile
+    form_class = UserUpdateForm
+    template_name = 'staff/editprofile.html'
+
+    def get_form_kwargs(self):
+        kwargs = super(UserUpdateView, self).get_form_kwargs()
+        kwargs['user'] = User.objects.get(pk=self.kwargs['pk'])
+        return kwargs
+
+    def form_valid(self, form):
+        user = form.instance.user
+        user.email = form.cleaned_data['email']
+        user.save()
+        return super(UserUpdateView, self).form_valid(form)
+
+    def test_func(self):
+        user_profile = self.get_object()
+        return self.request.user == user_profile.user
+
+    def get_object(self, queryset=None):
+        # Assuming you're using the user's ID in the URL
+        return UserProfile.objects.get(user__pk=self.kwargs['pk'])
+
 class ticketList(LoginRequiredMixin, ListView):
     pass
 
@@ -118,20 +153,7 @@ class UserListView(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         return context
 
-class UserUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    model = User
-    template_name = 'staff/editprofile.html'
-    form_class = CompleteUserForm
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        user = User.objects.get(pk=self.kwargs['pk'])
-        return context
 
-    def test_func(self):
-        user = self.get_object()
-        if self.request.user == user:
-            return True
-        return False
 
 class UserDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = User

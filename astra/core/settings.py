@@ -31,7 +31,7 @@ print(f"Allowed Hosts: {ALLOWED_HOSTS}")
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://adev.auroraisles.com", 
+    "http://dev.auroraisles.com", 
     "https://dev.auroraisles.com", 
     "http://10.13.37.13", 
     "http://127.0.0.1"

@@ -10,9 +10,12 @@ RUN mkdir /astra
 
 # # Copy project
 COPY . /astra
+# COPY ./scripts/wait_for_db.py /astra/wait_for_db.py
 
 # Install dependencies
 COPY requirements.txt /astra/
 
 WORKDIR /astra
 RUN pip install --no-cache-dir -r requirements.txt
+
+# CMD ["./wait_for_db.py && python", "manage.py", "runserver", "0.0.0.0:8000"]
