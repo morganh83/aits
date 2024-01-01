@@ -10,7 +10,7 @@ urlpatterns = [
     # Base URLS #
     path("", views.welcome, name='index'),
     path("index", views.index, name='index'),
-    path("login", views.login_view, name='login'),
+    path("login", views.login_view, name='login_view'),
     path("logout", views.logout_view, name='logout'),
     path("initialize_admin", views.initialize_admin, name='initialize_admin'),
     
