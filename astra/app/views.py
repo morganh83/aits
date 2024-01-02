@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
@@ -33,7 +33,6 @@ def initialize_admin(request):
     if request.method == 'POST':
         form = CompleteUserForm(request.POST)
         password = request.POST.get('password')
-        print("Password: " + str(password))
         if form.is_valid():
             user = form.save(commit=False)
             user.username = form.cleaned_data['username']
@@ -121,8 +120,10 @@ class UserUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user == user_profile.user
 
     def get_object(self, queryset=None):
+        user = get_object_or_404(User, pk=self.kwargs['pk'])
         # Assuming you're using the user's ID in the URL
-        return UserProfile.objects.get(user__pk=self.kwargs['pk'])
+        # return UserProfile.objects.get(user__pk=self.kwargs['pk'])
+        return UserProfile.objects.get(user=user)
 
 class ticketList(LoginRequiredMixin, ListView):
     pass
@@ -144,13 +145,14 @@ class ticketCreate(LoginRequiredMixin, TemplateView):
 # User views (list, update, delete, create) #
 class UserListView(LoginRequiredMixin, ListView):
     model = User
-    template_name = 'admin/user_list.html'
+    template_name = 'admin/userslist.html'
     context_object_name = 'users'
     ordering = ['username']
     paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        
         return context
 
 
